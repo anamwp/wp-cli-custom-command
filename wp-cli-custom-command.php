@@ -58,7 +58,7 @@ class WP_CLI_Custom_Command{
          * =========
          * if there is no value for category flag
          */
-        if( 'boolean' == gettype($assoc_args['category']) ){
+        if( array_key_exists('category', $assoc_args) && 'boolean' == gettype($assoc_args['category']) ){
             WP_CLI::warning( 'You need to pass category id --category=1,2,3 inside flag' );
         }
         /**
@@ -73,6 +73,8 @@ class WP_CLI_Custom_Command{
         $category_id =  array_key_exists('category', $assoc_args) ? $assoc_args['category'] : 0;
         if(file_exists($filename)){
             WP_CLI::warning(sprintf('file already exists ! The following file will be overwritten %s', $filename));
+            WP_CLI::confirm( __( 'Do you want to proceed?', 'wordpress-examples' ) );
+
         }
         /**
          * fetch all posts
