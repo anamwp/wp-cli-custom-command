@@ -88,13 +88,13 @@ class WP_CLI_Custom_Command{
          * to insert into csv file
          */
         $results = [];
-        $results[] = ['ID', 'post_title', 'post_name', 'post_date', 'post_status'];
+        $results[] = ['ID', 'post_title', 'post_link', 'post_date', 'post_status'];
         /**
          * loop through each post 
          * that is return 
          */
         foreach($site_posts as $post){
-            $results[] = [ $post->ID , $post->post_title, $post->post_name, $post->post_date, $post->post_status ];
+            $results[] = [ $post->ID , $post->post_title, $post->guid, $post->post_date, $post->post_status ];
         }
         /**
          * write all data 
