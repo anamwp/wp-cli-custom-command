@@ -1,0 +1,19 @@
+{
+    "name": "anamhossain/wp-cli-custom-command",
+    "autoload": {
+        "psr-4": {
+            "Anamhossain\\WpCliCustomCommand\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "anamhossain0410",
+            "email": "anam.hossain@multidots.com"
+        }
+    ],
+    "require-dev": {
+        "squizlabs/php_codesniffer": "^3.6",
+        "phpcompatibility/phpcompatibility-wp": "*",
+        "dealerdirect/phpcodesniffer-composer-installer": "^0.7"
+    }
+}

@@ -40,7 +40,7 @@ class WP_CLI_Custom_Command {
          * =========
          * if there no filename flag
          */
-        if ( !array_key_exists( 'filename', $assoc_args ) ) {
+        if (!array_key_exists( 'filename', $assoc_args ) ) {
             WP_CLI::warning( 'Please provide a file name with --filename flag to export' );
             WP_CLI::error( 'No filename !', $exit = true );
         }
